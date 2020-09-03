@@ -10,11 +10,11 @@
                     <div class="p-2 w-full">
                         <div class="form-group">
                             <label class="w-full" for="title">Title:</label>
-                            <input type="text"  class="form-control" id="title" placeholder="Enter title here" v-model="newTodoTitle">
+                            <input type="text"  class="form-control" id="title" placeholder="Enter title here" v-model="newTodoTitle" @keyup.enter="addTodoBody">
                         </div>
                         <div class="form-group">
                             <label class="w-full" for="body">Body:</label>
-                            <input type="text"  class="form-control" id="body" placeholder="Enter body here" v-model="newTodoBody" @keyup.enter="addTodoBody">
+                            <input type="text" class="form-control" id="body" placeholder="Enter body here" v-model="newTodoBody" @keyup.enter="addTodoBody">
                         </div>
                     </div>
                 </form>
@@ -79,7 +79,7 @@
             // },
 
             addTodoBody() {
-                if (this.newTodoBody.trim().length === 0 && this.newTodoTitle.trim().length === 0) {
+                if ( this.newTodoTitle.trim().length === 0) {
                     return
                 }
                 this.todobodys.push({

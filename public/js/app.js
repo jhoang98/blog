@@ -1981,7 +1981,7 @@ __webpack_require__.r(__webpack_exports__);
     //     this.idForTodoTitle=''
     // },
     addTodoBody: function addTodoBody() {
-      if (this.newTodoBody.trim().length === 0 && this.newTodoTitle.trim().length === 0) {
+      if (this.newTodoTitle.trim().length === 0) {
         return;
       }
 
@@ -38348,6 +38348,15 @@ var render = function() {
                 },
                 domProps: { value: _vm.newTodoTitle },
                 on: {
+                  keyup: function($event) {
+                    if (
+                      !$event.type.indexOf("key") &&
+                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                    ) {
+                      return null
+                    }
+                    return _vm.addTodoBody($event)
+                  },
                   input: function($event) {
                     if ($event.target.composing) {
                       return
