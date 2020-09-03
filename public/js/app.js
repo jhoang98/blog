@@ -38408,7 +38408,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-6 float-lg-left" },
+        { staticClass: "col-6 float-lg-left ellipsis" },
         _vm._l(_vm.todos, function(todo) {
           return _c("div", { key: todo.id }, [
             _c("h2", [_vm._v("Title:  " + _vm._s(todo.title))])
@@ -38419,7 +38419,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-6 float-lg-right" },
+        { staticClass: "col-6 float-lg-right ellipsis" },
         _vm._l(_vm.todobodys, function(todobody) {
           return _c("div", { key: todobody.id }, [
             _c("h2", [_vm._v("Body: " + _vm._s(todobody.body))])

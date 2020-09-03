@@ -24,12 +24,12 @@
 
         <div class="col-12">
             <h1 class="p-2 text-2xl text-gray-800 font-semibold my-5">Posts:</h1>
-            <div class="col-6 float-lg-left">
+            <div class="col-6 float-lg-left ellipsis">
                 <div v-for="todo in todos" :key="todo.id">
                     <h2>Title:  {{todo.title}}</h2>
                 </div>
             </div>
-            <div class="col-6 float-lg-right">
+            <div class="col-6 float-lg-right ellipsis">
                 <div v-for="todobody in todobodys" :key="todobody.id">
                     <h2>Body: {{todobody.body}}</h2>
                 </div>
