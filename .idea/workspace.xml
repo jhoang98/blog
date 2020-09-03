@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c6270f9-3f91-48dd-9c2e-a97b534c5bb8" name="Default Changelist" comment="" />
+    <list default="true" id="4c6270f9-3f91-48dd-9c2e-a97b534c5bb8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Home.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,7 +178,7 @@
       <workItem from="1598957380777" duration="14820000" />
       <workItem from="1599039287412" duration="1997000" />
       <workItem from="1599041676736" duration="627000" />
-      <workItem from="1599043122027" duration="31549000" />
+      <workItem from="1599043122027" duration="40577000" />
     </task>
     <servers />
   </component>
@@ -188,9 +194,13 @@
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
     <state x="1466" y="487" key="EditFileWatcherDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1598958592714" />
-    <state x="1542" y="455" width="845" height="538" key="find.popup" timestamp="1599118077010">
+    <state x="1542" y="455" width="845" height="538" key="find.popup" timestamp="1599125616025">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state x="1542" y="455" width="845" height="538" key="find.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1599118077010" />
+    <state x="1542" y="455" width="845" height="538" key="find.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1599125616025" />
+    <state x="1556" y="328" width="670" height="676" key="search.everywhere.popup" timestamp="1599130366494">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="1556" y="328" width="670" height="676" key="search.everywhere.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1599130366494" />
   </component>
 </project>

@@ -1947,9 +1947,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'newTodo',
   data: function data() {
@@ -1971,31 +1968,33 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    addTodoTitle: function addTodoTitle() {
-      if (this.newTodoTitle.trim().length === 0) {
-        return;
-      }
-
-      this.todos.push({
-        id: this.idForTodoTitle,
-        title: this.newTodoTitle,
-        completed: false
-      });
-      this.newTodoTitle = '';
-      this.idForTodoTitle = '';
-    },
+    // addTodoTitle() {
+    //     if (this.newTodoTitle.trim().length === 0 ) {
+    //         return
+    //     }
+    //     this.todos.push({
+    //         id: this.idForTodoTitle,
+    //         completed: false,
+    //     });
+    //
+    //     this.newTodoTitle = '';
+    //     this.idForTodoTitle=''
+    // },
     addTodoBody: function addTodoBody() {
-      if (this.newTodoBody.trim().length === 0) {
+      if (this.newTodoBody.trim().length === 0 && this.newTodoTitle.trim().length === 0) {
         return;
       }
 
       this.todobodys.push({
         id: this.idForTodoBody,
+        title: this.newTodoTitle,
         body: this.newTodoBody,
         completed: false
       });
       this.newTodoBody = '';
       this.idForTodoBody = '';
+      this.newTodoTitle = '';
+      this.idForTodoTitle = '';
     }
   }
 });
@@ -2011,6 +2010,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -38311,122 +38324,113 @@ var render = function() {
       _c("div", { staticClass: "col-12" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "p-2 w-full" }, [
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { staticClass: "w-full", attrs: { for: "title" } }, [
-              _vm._v("Title:")
+        _c("form", { staticClass: "form", attrs: { id: "myForm" } }, [
+          _c("div", { staticClass: "p-2 w-full" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { staticClass: "w-full", attrs: { for: "title" } }, [
+                _vm._v("Title:")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.newTodoTitle,
+                    expression: "newTodoTitle"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  type: "text",
+                  id: "title",
+                  placeholder: "Enter title here"
+                },
+                domProps: { value: _vm.newTodoTitle },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.newTodoTitle = $event.target.value
+                  }
+                }
+              })
             ]),
             _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.newTodoTitle,
-                  expression: "newTodoTitle"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                id: "title",
-                placeholder: "Enter title here"
-              },
-              domProps: { value: _vm.newTodoTitle },
-              on: {
-                keyup: function($event) {
-                  if (
-                    !$event.type.indexOf("key") &&
-                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                  ) {
-                    return null
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { staticClass: "w-full", attrs: { for: "body" } }, [
+                _vm._v("Body:")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.newTodoBody,
+                    expression: "newTodoBody"
                   }
-                  return _vm.addTodoTitle($event)
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  type: "text",
+                  id: "body",
+                  placeholder: "Enter body here"
                 },
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
+                domProps: { value: _vm.newTodoBody },
+                on: {
+                  keyup: function($event) {
+                    if (
+                      !$event.type.indexOf("key") &&
+                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                    ) {
+                      return null
+                    }
+                    return _vm.addTodoBody($event)
+                  },
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.newTodoBody = $event.target.value
                   }
-                  _vm.newTodoTitle = $event.target.value
                 }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { staticClass: "w-full", attrs: { for: "body" } }, [
-              _vm._v("Body:")
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.newTodoBody,
-                  expression: "newTodoBody"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                id: "body",
-                placeholder: "Enter body here"
-              },
-              domProps: { value: _vm.newTodoBody },
-              on: {
-                keyup: function($event) {
-                  if (
-                    !$event.type.indexOf("key") &&
-                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                  ) {
-                    return null
-                  }
-                  return _vm.addTodoBody($event)
-                },
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.newTodoBody = $event.target.value
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" })
+              })
+            ])
+          ])
         ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12" }, [
+        _c(
+          "h1",
+          { staticClass: "p-2 text-2xl text-gray-800 font-semibold my-5" },
+          [_vm._v("Posts:")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-6 float-lg-left ellipsis" },
+          _vm._l(_vm.todobodys, function(todobody) {
+            return _c("div", { key: todobody.id }, [
+              _c("h2", [_vm._v("Title:  " + _vm._s(todobody.title))])
+            ])
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-6 float-lg-right ellipsis" },
+          _vm._l(_vm.todobodys, function(todobody) {
+            return _c("div", { key: todobody.id }, [
+              _c("h2", [_vm._v("Body: " + _vm._s(todobody.body))])
+            ])
+          }),
+          0
+        )
       ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-12" }, [
-      _c(
-        "h1",
-        { staticClass: "p-2 text-2xl text-gray-800 font-semibold my-5" },
-        [_vm._v("Posts:")]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-6 float-lg-left ellipsis" },
-        _vm._l(_vm.todos, function(todo) {
-          return _c("div", { key: todo.id }, [
-            _c("h2", [_vm._v("Title:  " + _vm._s(todo.title))])
-          ])
-        }),
-        0
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-6 float-lg-right ellipsis" },
-        _vm._l(_vm.todobodys, function(todobody) {
-          return _c("div", { key: todobody.id }, [
-            _c("h2", [_vm._v("Body: " + _vm._s(todobody.body))])
-          ])
-        }),
-        0
-      )
     ])
   ])
 }
@@ -38485,7 +38489,37 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _vm._m(0)
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-12" }, [
+      _c(
+        "h1",
+        { staticClass: "p-2 text-2xl text-gray-800 font-semibold my-5" },
+        [_vm._v("Posts:")]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-6 float-lg-left ellipsis" },
+        _vm._l(_vm.todos, function(todo) {
+          return _c("div", { key: todo.id }, [
+            _c("h2", [_vm._v("Title:  " + _vm._s(todo.title))])
+          ])
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-6 float-lg-right ellipsis" },
+        _vm._l(_vm.todobodys, function(todobody) {
+          return _c("div", { key: todobody.id }, [
+            _c("h2", [_vm._v("Body: " + _vm._s(todobody.body))])
+          ])
+        }),
+        0
+      )
+    ])
   ])
 }
 var staticRenderFns = [
@@ -55115,7 +55149,11 @@ vue__WEBPACK_IMPORTED_MODULE_2___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 vue__WEBPACK_IMPORTED_MODULE_2___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_3__["default"]);
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   router: router,
-  mode: 'history'
+  mode: 'history',
+  routes: [{
+    path: '/create',
+    redirect: '/home'
+  }]
 });
 var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
   el: '#app',

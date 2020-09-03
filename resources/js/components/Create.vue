@@ -6,37 +6,34 @@
                     <h1>Create a post here:</h1>
                     <p>Click enter to submit your post</p>
                 </div>
-                <div class="p-2 w-full">
-                    <div class="form-group">
-                        <label class="w-full" for="title">Title:</label>
-                        <input type="text"  class="form-control" id="title" placeholder="Enter title here" v-model="newTodoTitle" @keyup.enter="addTodoTitle">
+                <form id="myForm" class="form">
+                    <div class="p-2 w-full">
+                        <div class="form-group">
+                            <label class="w-full" for="title">Title:</label>
+                            <input type="text"  class="form-control" id="title" placeholder="Enter title here" v-model="newTodoTitle">
+                        </div>
+                        <div class="form-group">
+                            <label class="w-full" for="body">Body:</label>
+                            <input type="text"  class="form-control" id="body" placeholder="Enter body here" v-model="newTodoBody" @keyup.enter="addTodoBody">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="w-full" for="body">Body:</label>
-                        <input type="text"  class="form-control" id="body" placeholder="Enter body here" v-model="newTodoBody" @keyup.enter="addTodoBody">
-                    </div>
-                    <div class="form-group">
-
+                </form>
+            </div>
+            <div class="col-12">
+                <h1 class="p-2 text-2xl text-gray-800 font-semibold my-5">Posts:</h1>
+                <div class="col-6 float-lg-left ellipsis">
+                    <div v-for="todobody in todobodys" :key="todobody.id">
+                        <h2>Title:  {{todobody.title}}</h2>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="col-12">
-            <h1 class="p-2 text-2xl text-gray-800 font-semibold my-5">Posts:</h1>
-            <div class="col-6 float-lg-left ellipsis">
-                <div v-for="todo in todos" :key="todo.id">
-                    <h2>Title:  {{todo.title}}</h2>
-                </div>
-            </div>
-            <div class="col-6 float-lg-right ellipsis">
-                <div v-for="todobody in todobodys" :key="todobody.id">
-                    <h2>Body: {{todobody.body}}</h2>
+                <div class="col-6 float-lg-right ellipsis">
+                    <div v-for="todobody in todobodys" :key="todobody.id">
+                        <h2>Body: {{todobody.body}}</h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 
 </template>
 
@@ -68,32 +65,34 @@
         },
 
         methods: {
-            addTodoTitle() {
-                if (this.newTodoTitle.trim().length === 0 ) {
-                    return
-                }
-                this.todos.push({
-                    id: this.idForTodoTitle,
-                    title: this.newTodoTitle,
-                    completed: false,
-                });
-
-                this.newTodoTitle = '';
-                this.idForTodoTitle=''
-            },
+            // addTodoTitle() {
+            //     if (this.newTodoTitle.trim().length === 0 ) {
+            //         return
+            //     }
+            //     this.todos.push({
+            //         id: this.idForTodoTitle,
+            //         completed: false,
+            //     });
+            //
+            //     this.newTodoTitle = '';
+            //     this.idForTodoTitle=''
+            // },
 
             addTodoBody() {
-                if (this.newTodoBody.trim().length === 0 ) {
+                if (this.newTodoBody.trim().length === 0 && this.newTodoTitle.trim().length === 0) {
                     return
                 }
                 this.todobodys.push({
                     id: this.idForTodoBody,
+                    title: this.newTodoTitle,
                     body: this.newTodoBody,
                     completed: false,
                 });
 
                 this.newTodoBody = '';
-                this.idForTodoBody=''
+                this.idForTodoBody='';
+                this.newTodoTitle = '';
+                this.idForTodoTitle='';
             }
 
         }
