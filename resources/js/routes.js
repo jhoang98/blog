@@ -1,7 +1,6 @@
 import NotFound from './components/NotFound';
 import Home from './components/Home';
 import Show from './components/Show';
-
 import Axios from "axios";
 
 export default {
@@ -36,7 +35,8 @@ export default {
 
         {
             path: '/show/:id',
-            component: Show
+            component: () =>
+                import(/*webpackChunkName: "Categories"*/"./components/Show")
         }
     ]
 }

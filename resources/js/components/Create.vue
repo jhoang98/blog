@@ -21,15 +21,14 @@
             </div>
             <div class="col-12">
                 <h1 class="p-2 text-2xl text-gray-800 font-semibold my-5">Posts:</h1>
-                <div class="col-6 float-lg-left ellipsis">
-                    <div v-for="todobody in todobodys" :key="todobody.id">
+                <div v-for="todobody in todobodys" :key="todobody.id">
+                    <div class="col-6 float-lg-left ellipsis">
                         <h2>Title:  {{todobody.title}}</h2>
                     </div>
-                </div>
-                <div class="col-6 float-lg-right ellipsis">
-                    <div v-for="todobody in todobodys" :key="todobody.id">
+                    <div class="col-6 float-lg-right ellipsis">
                         <h2>Body: {{todobody.body}}</h2>
                     </div>
+                    <router-link class="col-12 btn btn-lg btn-success" to="/show/{id}" style="color: black">Read More</router-link>
                 </div>
             </div>
         </div>
@@ -43,20 +42,12 @@
         data () {
             return {
                 newTodoTitle:'',
-                idForTodoTitle: 3,
-                todos: [
-                    {
-                        'id': 1,
-                        'title': 'First Example Title',
-                        'completed': false
-                    }
-                ],
-
                 newTodoBody:'',
-                idForTodoBody: 3,
+                idForTodoBody: 2,
                 todobodys: [
                     {
                         'id': 1,
+                        'title': 'First Example Title',
                         'body': 'First Example Body',
                         'completed': false
                     }
@@ -65,19 +56,6 @@
         },
 
         methods: {
-            // addTodoTitle() {
-            //     if (this.newTodoTitle.trim().length === 0 ) {
-            //         return
-            //     }
-            //     this.todos.push({
-            //         id: this.idForTodoTitle,
-            //         completed: false,
-            //     });
-            //
-            //     this.newTodoTitle = '';
-            //     this.idForTodoTitle=''
-            // },
-
             addTodoBody() {
                 if ( this.newTodoTitle.trim().length === 0) {
                     return
@@ -89,10 +67,10 @@
                     completed: false,
                 });
 
-                this.newTodoBody = '';
-                this.idForTodoBody='';
                 this.newTodoTitle = '';
                 this.idForTodoTitle='';
+                this.newTodoBody = '';
+                this.idForTodoBody='';
             }
 
         }

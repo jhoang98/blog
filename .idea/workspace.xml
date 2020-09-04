@@ -3,10 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="4c6270f9-3f91-48dd-9c2e-a97b534c5bb8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/index.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Vue Single File Component" />
         <option value="CSS File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -178,7 +182,7 @@
       <workItem from="1598957380777" duration="14820000" />
       <workItem from="1599039287412" duration="1997000" />
       <workItem from="1599041676736" duration="627000" />
-      <workItem from="1599043122027" duration="41037000" />
+      <workItem from="1599043122027" duration="70915000" />
     </task>
     <servers />
   </component>
@@ -194,10 +198,26 @@
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
     <state x="1466" y="487" key="EditFileWatcherDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1598958592714" />
-    <state x="1542" y="455" width="845" height="538" key="find.popup" timestamp="1599125616025">
+    <state width="1296" height="382" key="GridCell.Tab.0.bottom" timestamp="1599142787326">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state x="1542" y="455" width="845" height="538" key="find.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1599125616025" />
+    <state width="1296" height="382" key="GridCell.Tab.0.bottom/0.23.2560.1337@0.23.2560.1337" timestamp="1599142787326" />
+    <state width="1296" height="382" key="GridCell.Tab.0.center" timestamp="1599142787325">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="1296" height="382" key="GridCell.Tab.0.center/0.23.2560.1337@0.23.2560.1337" timestamp="1599142787325" />
+    <state width="1296" height="382" key="GridCell.Tab.0.left" timestamp="1599142787320">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="1296" height="382" key="GridCell.Tab.0.left/0.23.2560.1337@0.23.2560.1337" timestamp="1599142787320" />
+    <state width="1296" height="382" key="GridCell.Tab.0.right" timestamp="1599142787325">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="1296" height="382" key="GridCell.Tab.0.right/0.23.2560.1337@0.23.2560.1337" timestamp="1599142787325" />
+    <state x="1542" y="455" width="845" height="538" key="find.popup" timestamp="1599231993016">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="1542" y="455" width="845" height="538" key="find.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1599231993016" />
     <state x="1556" y="328" width="670" height="676" key="search.everywhere.popup" timestamp="1599130366494">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
