@@ -21,14 +21,14 @@
             </div>
             <div class="col-12">
                 <h1 class="p-2 text-2xl text-gray-800 font-semibold my-5">Posts:</h1>
-                <div v-for="todobody in todobodys" :key="todobody.id">
+                <div v-for="todo in todos" :key="todo.id">
                     <div class="col-6 float-lg-left ellipsis">
-                        <h2>Title:  {{todobody.title}}</h2>
+                        <h2>Title:  {{todo.title}}</h2>
                     </div>
                     <div class="col-6 float-lg-right ellipsis">
-                        <h2>Body: {{todobody.body}}</h2>
+                        <h2>Body: {{todo.body}}</h2>
                     </div>
-                    <router-link class="col-12 btn btn-lg btn-success" to="/show/{id}" style="color: black">Read More</router-link>
+                    <router-link class="col-12 btn btn-lg btn-success" :to="{name:'Show', params: {id:todo.id}}" style="color: black">Read More</router-link>
                 </div>
             </div>
         </div>
@@ -37,6 +37,10 @@
 </template>
 
 <script>
+    import {
+     mapGetters
+    } from "vuex";
+
     export default {
         name: 'newTodo',
         data () {
@@ -44,15 +48,21 @@
                 newTodoTitle:'',
                 newTodoBody:'',
                 idForTodoBody: 2,
-                todobodys: [
-                    {
-                        'id': 1,
-                        'title': 'First Example Title',
-                        'body': 'First Example Body',
-                        'completed': false
-                    }
-                ]
+                // todobodys: [
+                //     {
+                //         'id': 1,
+                //         'title': 'First Example Title',
+                //         'body': 'First Example Body',
+                //         'completed': false
+                //     }
+                // ]
             }
+        },
+
+        computed: {
+            ...mapGetters({
+                todos: 'todos'
+            })
         },
 
         methods: {
@@ -60,7 +70,14 @@
                 if ( this.newTodoTitle.trim().length === 0) {
                     return
                 }
-                this.todobodys.push({
+                // this.todobodys.push({
+                //     id: this.idForTodoBody,
+                //     title: this.newTodoTitle,
+                //     body: this.newTodoBody,
+                //     completed: false,
+                // });
+
+                this.$store.dispatch('add', {
                     id: this.idForTodoBody,
                     title: this.newTodoTitle,
                     body: this.newTodoBody,

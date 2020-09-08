@@ -1,6 +1,8 @@
 import NotFound from './components/NotFound';
 import Home from './components/Home';
+import About from './components/About';
 import Show from './components/Show';
+import Hello from './components/Hello';
 import Axios from "axios";
 
 export default {
@@ -34,7 +36,14 @@ export default {
         },
 
         {
+            path: '/about',
+            name: 'About',
+            component: About
+        },
+
+        {
             path: '/show/:id',
+            name: 'Show',
             component: () =>
                 import(/*webpackChunkName: "Categories"*/"./components/Show")
         }

@@ -9,6 +9,13 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -47,28 +54,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'newTodo',
   data: function data() {
     return {
       newTodoTitle: '',
       newTodoBody: '',
-      idForTodoBody: 2,
-      todobodys: [{
-        'id': 1,
-        'title': 'First Example Title',
-        'body': 'First Example Body',
-        'completed': false
-      }]
+      idForTodoBody: 2 // todobodys: [
+      //     {
+      //         'id': 1,
+      //         'title': 'First Example Title',
+      //         'body': 'First Example Body',
+      //         'completed': false
+      //     }
+      // ]
+
     };
   },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
+    todos: 'todos'
+  })),
   methods: {
     addTodoBody: function addTodoBody() {
       if (this.newTodoTitle.trim().length === 0) {
         return;
-      }
+      } // this.todobodys.push({
+      //     id: this.idForTodoBody,
+      //     title: this.newTodoTitle,
+      //     body: this.newTodoBody,
+      //     completed: false,
+      // });
 
-      this.todobodys.push({
+
+      this.$store.dispatch('add', {
         id: this.idForTodoBody,
         title: this.newTodoTitle,
         body: this.newTodoBody,
@@ -250,17 +269,17 @@ var render = function() {
             [_vm._v("Posts:")]
           ),
           _vm._v(" "),
-          _vm._l(_vm.todobodys, function(todobody) {
+          _vm._l(_vm.todos, function(todo) {
             return _c(
               "div",
-              { key: todobody.id },
+              { key: todo.id },
               [
                 _c("div", { staticClass: "col-6 float-lg-left ellipsis" }, [
-                  _c("h2", [_vm._v("Title:  " + _vm._s(todobody.title))])
+                  _c("h2", [_vm._v("Title:  " + _vm._s(todo.title))])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-6 float-lg-right ellipsis" }, [
-                  _c("h2", [_vm._v("Body: " + _vm._s(todobody.body))])
+                  _c("h2", [_vm._v("Body: " + _vm._s(todo.body))])
                 ]),
                 _vm._v(" "),
                 _c(
@@ -268,7 +287,7 @@ var render = function() {
                   {
                     staticClass: "col-12 btn btn-lg btn-success",
                     staticStyle: { color: "black" },
-                    attrs: { to: "/show/{id}" }
+                    attrs: { to: { name: "Show", params: { id: todo.id } } }
                   },
                   [_vm._v("Read More")]
                 )
@@ -308,15 +327,14 @@ render._withStripped = true
 /*!********************************************!*\
   !*** ./resources/js/components/Create.vue ***!
   \********************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Create_vue_vue_type_template_id_67c71db2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Create.vue?vue&type=template&id=67c71db2& */ "./resources/js/components/Create.vue?vue&type=template&id=67c71db2&");
 /* harmony import */ var _Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Create.vue?vue&type=script&lang=js& */ "./resources/js/components/Create.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _Create_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Create.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/Create.vue?vue&type=style&index=0&lang=css&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Create_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Create.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/Create.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -348,7 +366,7 @@ component.options.__file = "resources/js/components/Create.vue"
 /*!*********************************************************************!*\
   !*** ./resources/js/components/Create.vue?vue&type=script&lang=js& ***!
   \*********************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
