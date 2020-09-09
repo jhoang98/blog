@@ -98,7 +98,7 @@
                 this.idForTodoBody='';
             },
 
-            removeTodoPost() {
+            removeTodoPost(id) {
                 let confirmed = confirm('Are you sure you want to delete?');
                 if (confirmed){
                     /**JavaScript**/
@@ -109,12 +109,7 @@
                     // this.$delete(this.todos, id);
 
                     /**Store dispatch**/
-                    this.$store.dispatch('delete', {
-                        id: this.idForTodoBody,
-                        title: this.TodoTitle,
-                        body: this.newTodoBody,
-                        completed: false,
-                    });
+                    this.$store.dispatch('delete', id);
                 }
             },
         }
