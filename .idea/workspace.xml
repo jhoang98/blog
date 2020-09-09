@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c6270f9-3f91-48dd-9c2e-a97b534c5bb8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/content/articles/article-1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/content/articles/article-2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/content/home.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/content/index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/About.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/Create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/Create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Show.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +215,8 @@
       <workItem from="1599041676736" duration="627000" />
       <workItem from="1599043122027" duration="88392000" />
       <workItem from="1599483565519" duration="188000" />
-      <workItem from="1599551600616" duration="7795000" />
+      <workItem from="1599551600616" duration="8092000" />
+      <workItem from="1599571912635" duration="24011000" />
     </task>
     <servers />
   </component>
@@ -271,10 +264,10 @@
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
     <state x="1590" y="526" key="com.intellij.ide.util.TipDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1599551600715" />
-    <state x="1542" y="455" width="845" height="538" key="find.popup" timestamp="1599552459169">
+    <state x="1542" y="455" width="845" height="538" key="find.popup" timestamp="1599606513319">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state x="1542" y="455" width="845" height="538" key="find.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1599552459169" />
+    <state x="1542" y="455" width="845" height="538" key="find.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1599606513319" />
     <state x="1556" y="328" width="670" height="676" key="search.everywhere.popup" timestamp="1599474375209">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
