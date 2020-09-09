@@ -10,7 +10,7 @@
                 <div class="p-2 w-full">
                     <div class="form-group">
                         <label class="w-full" for="title">Title:</label>
-                        <input type="text"  class="form-control" id="title" placeholder="Enter title here" v-model="newTodoTitle" @keyup.enter="addTodoBody">
+                        <input type="text" class="form-control" id="title" placeholder="Enter title here" v-model="newTodoTitle" @keyup.enter="addTodoBody">
                     </div>
                     <div class="form-group">
                         <label class="w-full" for="body">Body:</label>
@@ -26,18 +26,16 @@
                         <tr>
                             <th scope="col">Title</th>
                             <th scope="col">Body</th>
-                            <th scope="col">Date/Time</th>
                             <th scope="col"></th>
                         </tr>
                         </thead>
-                        <tbody v-for="(todo, index) in todos" :key="todo.id">
-                        <tr>
-                            <td>{{todo.title}}</td>
-                            <td>{{todo.body}}</td>
-                            <td></td>
-                            <td><router-link class="btn btn-success" :to="{name:'Show', params: {id:todo.id}}" style="color: black">Read More</router-link>
-                                <span class="btn btn-danger" @click="remove(index)">Delete</span></td>
-                        </tr>
+                        <tbody v-for="(todo) in todos" :key="todo.id">
+                            <tr>
+                                <td>{{todo.title}}</td>
+                                <td>{{todo.body}}</td>
+                                <td><router-link class="btn btn-primary" :to="{name:'Show', params: {id:todo.id}}" style="color: black">Read More</router-link>
+                                <span class="btn btn-danger" @click="removeTodoPost(todo.id)">Delete</span></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -57,7 +55,7 @@
             return {
                 newTodoTitle:'',
                 newTodoBody:'',
-                idForTodoBody: 2,
+                idForTodoBody: this.$route.params.id,
                 // todobodys: [
                 //     {
                 //         'id': 1,
@@ -66,7 +64,7 @@
                 //         'completed': false
                 //     }
                 // ]
-            }
+            };
         },
 
         computed: {
@@ -100,15 +98,23 @@
                 this.idForTodoBody='';
             },
 
-            remove(id){
+            removeTodoPost() {
                 let confirmed = confirm('Are you sure you want to delete?');
-                if (confirm){
+                if (confirmed){
                     /**JavaScript**/
                     // console.log(id);
                     // this.todos.splice(id,1)
 
                     /**VueJS**/
-                    this.$delete(this.todos, id);
+                    // this.$delete(this.todos, id);
+
+                    /**Store dispatch**/
+                    this.$store.dispatch('delete', {
+                        id: this.idForTodoBody,
+                        title: this.TodoTitle,
+                        body: this.newTodoBody,
+                        completed: false,
+                    });
                 }
             },
         }

@@ -15,8 +15,8 @@ const actions = {
         commit('ADD', todo);
     },
 
-    delete: function ({commit}, todo) {
-        commit('DELETE', todo);
+    delete: function ({commit}, id) {
+        commit('DELETE', id)
     }
 };
 
@@ -25,8 +25,8 @@ const mutations = {
         state.todos.push(todo)
     },
 
-    DELETE: function (state, todo) {
-        state.todos.filter(todo)
+    DELETE: function (state, id) {
+        state.todos.splice(id)
     }
 };
 
