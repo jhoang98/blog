@@ -54,6 +54,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'newTodo',
@@ -97,6 +107,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.idForTodoTitle = '';
       this.newTodoBody = '';
       this.idForTodoBody = '';
+    },
+    remove: function remove(id) {
+      var confirmed = confirm('Are you sure you want to delete?');
+
+      if (confirm) {
+        /**JavaScript**/
+        // console.log(id);
+        // this.todos.splice(id,1)
+
+        /**VueJS**/
+        this.$delete(this.todos, id);
+      }
     }
   }
 });
@@ -168,136 +190,159 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "flex flex-wrap w-full my-5" }, [
-      _c("div", { staticClass: "col-12" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("form", { staticClass: "form", attrs: { id: "myForm" } }, [
-          _c("div", { staticClass: "p-2 w-full" }, [
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", { staticClass: "w-full", attrs: { for: "title" } }, [
-                _vm._v("Title:")
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.newTodoTitle,
-                    expression: "newTodoTitle"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  type: "text",
-                  id: "title",
-                  placeholder: "Enter title here"
-                },
-                domProps: { value: _vm.newTodoTitle },
-                on: {
-                  keyup: function($event) {
-                    if (
-                      !$event.type.indexOf("key") &&
-                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                    ) {
-                      return null
-                    }
-                    return _vm.addTodoBody($event)
-                  },
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.newTodoTitle = $event.target.value
-                  }
-                }
-              })
+    _c("div", { staticClass: "justify-right items-right pt-10" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("form", { staticClass: "form", attrs: { id: "myForm" } }, [
+        _c("div", { staticClass: "p-2 w-full" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticClass: "w-full", attrs: { for: "title" } }, [
+              _vm._v("Title:")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", { staticClass: "w-full", attrs: { for: "body" } }, [
-                _vm._v("Body:")
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.newTodoBody,
-                    expression: "newTodoBody"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  type: "text",
-                  id: "body",
-                  placeholder: "Enter body here"
-                },
-                domProps: { value: _vm.newTodoBody },
-                on: {
-                  keyup: function($event) {
-                    if (
-                      !$event.type.indexOf("key") &&
-                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                    ) {
-                      return null
-                    }
-                    return _vm.addTodoBody($event)
-                  },
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.newTodoBody = $event.target.value
-                  }
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.newTodoTitle,
+                  expression: "newTodoTitle"
                 }
-              })
-            ])
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                id: "title",
+                placeholder: "Enter title here"
+              },
+              domProps: { value: _vm.newTodoTitle },
+              on: {
+                keyup: function($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.addTodoBody($event)
+                },
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.newTodoTitle = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticClass: "w-full", attrs: { for: "body" } }, [
+              _vm._v("Body:")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.newTodoBody,
+                  expression: "newTodoBody"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                id: "body",
+                placeholder: "Enter body here"
+              },
+              domProps: { value: _vm.newTodoBody },
+              on: {
+                keyup: function($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.addTodoBody($event)
+                },
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.newTodoBody = $event.target.value
+                }
+              }
+            })
           ])
         ])
       ]),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-12" },
-        [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "flex flex-wrap my-5 row" }, [
           _c(
             "h1",
-            { staticClass: "p-2 text-2xl text-gray-800 font-semibold my-5" },
+            {
+              staticClass:
+                "p-2 text-2xl text-gray-800 font-semibold my-5 col-12"
+            },
             [_vm._v("Posts:")]
           ),
           _vm._v(" "),
-          _vm._l(_vm.todos, function(todo) {
-            return _c(
-              "div",
-              { key: todo.id },
-              [
-                _c("div", { staticClass: "col-6 float-lg-left ellipsis" }, [
-                  _c("h2", [_vm._v("Title:  " + _vm._s(todo.title))])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-6 float-lg-right ellipsis" }, [
-                  _c("h2", [_vm._v("Body: " + _vm._s(todo.body))])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "col-12 btn btn-lg btn-success",
-                    staticStyle: { color: "black" },
-                    attrs: { to: { name: "Show", params: { id: todo.id } } }
-                  },
-                  [_vm._v("Read More")]
-                )
-              ],
-              1
-            )
-          })
-        ],
-        2
-      )
+          _c(
+            "table",
+            { staticClass: "table table-striped" },
+            [
+              _vm._m(1),
+              _vm._v(" "),
+              _vm._l(_vm.todos, function(todo, index) {
+                return _c("tbody", { key: todo.id }, [
+                  _c("tr", [
+                    _c("td", [_vm._v(_vm._s(todo.title))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(todo.body))]),
+                    _vm._v(" "),
+                    _c("td"),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "btn btn-success",
+                            staticStyle: { color: "black" },
+                            attrs: {
+                              to: { name: "Show", params: { id: todo.id } }
+                            }
+                          },
+                          [_vm._v("Read More")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticClass: "btn btn-danger",
+                            on: {
+                              click: function($event) {
+                                return _vm.remove(index)
+                              }
+                            }
+                          },
+                          [_vm._v("Delete")]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ])
+              })
+            ],
+            2
+          )
+        ])
+      ])
     ])
   ])
 }
@@ -306,15 +351,27 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "p-2 text-2xl text-gray-800 font-semibold" },
-      [
-        _c("h1", [_vm._v("Create a post here:")]),
+    return _c("div", { staticClass: "flex flex-wrap max-w-xl" }, [
+      _c("div", { staticClass: "p-2 text-2xl text-gray-800 font-semibold" }, [
+        _c("h1", [_vm._v("Create a post here:")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", { staticClass: "thead-dark" }, [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Title")]),
         _vm._v(" "),
-        _c("p", [_vm._v("Click enter to submit your post")])
-      ]
-    )
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Body")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Date/Time")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } })
+      ])
+    ])
   }
 ]
 render._withStripped = true
