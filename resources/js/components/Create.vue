@@ -30,7 +30,7 @@
                             <th scope="col"></th>
                         </tr>
                         </thead>
-                        <tbody v-for="(todo) in todos" :key="todo.id" >
+                        <tbody v-for="(todo) in todos" :key="todo.id">
                             <tr>
                                 <td>{{todo.id}}</td>
                                 <td>{{todo.title}}</td>
