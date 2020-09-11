@@ -14,7 +14,7 @@
                     </div>
                     <div class="form-group">
                         <label class="w-full" for="body">Body:</label>
-                        <input type="text" class="form-control" id="body" placeholder="Enter body here" v-model="newTodoBody" @keyup.enter="addTodoBody">
+                        <input type="text" class="form-control" id="body" placeholder="Enter body here" v-model="newTodoBody" @keyup.enter="addTodoBody(1)">
                     </div>
                 </div>
             </form>
@@ -24,13 +24,15 @@
                     <table class="table table-striped">
                         <thead class="thead-dark">
                         <tr>
+                            <th scope="col">Id</th>
                             <th scope="col">Title</th>
                             <th scope="col">Body</th>
                             <th scope="col"></th>
                         </tr>
                         </thead>
-                        <tbody v-for="(todo) in todos" :key="todo.id">
+                        <tbody v-for="(todo) in todos" :key="todo.id" >
                             <tr>
+                                <td>{{todo.id}}</td>
                                 <td>{{todo.title}}</td>
                                 <td>{{todo.body}}</td>
                                 <td><router-link class="btn btn-primary" :to="{name:'Show', params: {id:todo.id}}" style="color: black">Read More</router-link>
@@ -53,17 +55,10 @@
         name: 'newTodo',
         data () {
             return {
+                newTodoId:1,
                 newTodoTitle:'',
                 newTodoBody:'',
-                idForTodoBody: this.$route.params.id,
-                // todobodys: [
-                //     {
-                //         'id': 1,
-                //         'title': 'First Example Title',
-                //         'body': 'First Example Body',
-                //         'completed': false
-                //     }
-                // ]
+                idForTodoBody:this.$route.params.id
             };
         },
 
@@ -74,7 +69,7 @@
         },
 
         methods: {
-            addTodoBody() {
+            addTodoBody(number) {
                 if ( this.newTodoTitle.trim().length === 0) {
                     return
                 }
@@ -86,12 +81,13 @@
                 // });
 
                 this.$store.dispatch('add', {
-                    id: this.idForTodoBody,
+                    id: this.newTodoId,
                     title: this.newTodoTitle,
                     body: this.newTodoBody,
-                    completed: false,
+                    completed: false
                 });
 
+                this.newTodoId += number;
                 this.newTodoTitle = '';
                 this.idForTodoTitle='';
                 this.newTodoBody = '';
@@ -111,7 +107,7 @@
                     /**Store dispatch**/
                     this.$store.dispatch('delete', id);
                 }
-            },
+            }
         }
     }
 </script>
