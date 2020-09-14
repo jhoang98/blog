@@ -19,10 +19,7 @@ Vue.use(Vuex);
 
 const router = new VueRouter({
     router,
-    mode: 'history',
-    routes: [
-        { path: '/create', redirect: '/home'}
-    ]
+    mode: 'history'
 });
 
 const app = new Vue({
