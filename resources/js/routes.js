@@ -35,6 +35,14 @@ export default {
         },
 
         {
+            path: '/email',
+            name: 'Email',
+            // route level code-splitting (lazyload)
+            component: () =>
+                import(/*webpackChunkName: "Create"*/"./components/Email")
+        },
+
+        {
             path: '/show/:id',
             name: 'Show',
             props: true,
