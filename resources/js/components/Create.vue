@@ -38,7 +38,7 @@
                                 <td title>{{todo.title}}</td>
                                 <td>{{todo.body}}</td>
                                 <td></td>
-                                <td><router-link class="btn btn-primary" :to="{name:'Show', params: {id:todo.id}}" style="color: black">Read More</router-link>
+                                <td><router-link todo class="btn btn-primary" :to="{name:'Show', params: {id:todo.id}}" style="color: black">Read More</router-link>
                                     <span class="btn btn-danger" @click="removeTodoPost(todo.id)">Delete</span></td>
                             </tr>
                             </tbody>
@@ -62,7 +62,6 @@
     import {
         mapGetters
     } from "vuex";
-    let id = 0;
 
     const uniqueId = require('lodash.uniqueid');
 
@@ -72,8 +71,7 @@
             return {
                 id:[],
                 newTodoTitle:'',
-                newTodoBody:'',
-                idForTodoBody:this.$route.params.id
+                newTodoBody:''
             };
         },
 
@@ -92,14 +90,9 @@
                 if ( this.newTodoTitle.trim().length === 0) {
                     return;
                 }
-                // this.todobodys.push({
-                //     id: this.idForTodoBody,
-                //     title: this.newTodoTitle,
-                //     body: this.newTodoBody,
-                //     completed: false,
-                // });
+
                 this.$store.dispatch('add', {
-                    id: this.isExist('id'),
+                    id: uniqueId(),
                     title: this.newTodoTitle,
                     body: this.newTodoBody,
                     completed: false
@@ -108,7 +101,6 @@
                 this.id = '';
                 this.newTodoTitle = '';
                 this.newTodoBody = '';
-                this.idForTodoBody='';
             },
 
             removeTodoPost(id) {
@@ -126,7 +118,7 @@
                 }
             },
 
-            isExist : function () {
+            uniqueId : function () {
                 let exist;
                 for (let i = 0; i < this.id.length; i++) {
                     if (this.id[i].todos !== this.todos) {
